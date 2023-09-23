@@ -837,13 +837,21 @@
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-ybHKSgBBBRWcVB6v8mENCj\/QzDeglrAm6T6nQYEI5mk=",
+      "hash": "sha256-5vcfCTnU9cD9k\/NWMvpZbd0bLlMNu2nGYzwRR7pE2zE=",
+      "url": "_framework\/Microsoft.Extensions.Localization.dll"
+    },
+    {
+      "hash": "sha256-mlOCYrC65BpJ1O\/5ql15iSS3u4e4w7O7YSqi0ZN5cl4=",
+      "url": "_framework\/Microsoft.Extensions.Localization.Abstractions.dll"
+    },
+    {
+      "hash": "sha256-hXpMXtiNbCWZV6y1GdjqYYIzCbHWyWSEdWwTSM16CjQ=",
       "url": "_content\/MudBlazor\/MudBlazor.min.css"
     },
     {
-      "hash": "sha256-cgPb7yky7NWb7YK8uNCmcG8oAFfmhN54qlpGneIHJ0A=",
+      "hash": "sha256-AUK98Fn+o8fWdxkLiz2xHfyhwA3cD2Z70StC05JgyeU=",
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "dhNdefRS"
+  "version": "8dtDjtmx"
 };
