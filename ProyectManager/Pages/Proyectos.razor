@@ -1,0 +1,45 @@
+﻿@page "/proyecto"
+
+@using ProyectManager.Models
+@using ProyectManager.Services
+@inject IProyectoService ProyectoService
+
+<MudText Typo="Typo.h4">Proyectos</MudText>
+
+@if (proyectos == null)
+{
+    <p>Cargando...</p>
+}
+else
+{
+    <MudGrid>
+        @foreach (var item in proyectos)
+        {
+            <MudItem xs="12" sm="10" md="6" lg="4">
+                <MudCard>
+                    <MudCardHeader Class="blue lighten-1">
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Typo="Typo.body2">@item.Descripcion</MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+}
+
+
+@code {
+     IEnumerable<Proyecto> proyectos = new List<Proyecto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        proyectos = await ProyectoService.GetAll();
+    }
+}
