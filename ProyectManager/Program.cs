@@ -11,6 +11,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7294/api/") });
  
 builder.Services.AddScoped<IProyectoService, ProyectoService>();
+builder.Services.AddScoped<IColaboradorService, ColaboradorService>();
 
 builder.Services.AddMudServices(); //Importación de los servicios
 await builder.Build().RunAsync();

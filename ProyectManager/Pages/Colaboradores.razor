@@ -1,0 +1,44 @@
+﻿@page "/colaborador"
+
+@using ProyectManager.Models
+@using ProyectManager.Services
+@inject IColaboradorService ColaboradorService
+
+<MudText Typo="Typo.h4">Colaboradores</MudText>
+
+@if (colaboradores == null)
+{
+    <p>Cargando...</p>
+}
+else
+{
+    <MudGrid>
+        @foreach (var item in colaboradores)
+        {
+            <MudItem xs="12" sm="10" md="6" lg="4">
+                <MudCard>
+                    <MudCardHeader Class="blue lighten-1">
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">@item.IdProyecto</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Typo="Typo.body2">@item.IdUsuario</MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+}
+
+@code {
+    IEnumerable<Colaborador> colaboradores = new List<Colaborador>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        colaboradores = await ColaboradorService.GetAll();
+    }
+}
